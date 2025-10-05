@@ -74,12 +74,8 @@ export function Impact() {
                         </div>
                     </div>
                 </section>
-
                 <Link to="/end"><Button text={"Continue"} /></Link>
             </section>
-
-
-
         </main>
     );
 }

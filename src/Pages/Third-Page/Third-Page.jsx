@@ -2,6 +2,7 @@ import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Third-Page.module.css";
 import question from '../../assets/question.png';
 import Button from "../../Components/Button/Button";
+import { Link } from "react-router-dom";
 
 export function ThirdPage() {
 	return (
