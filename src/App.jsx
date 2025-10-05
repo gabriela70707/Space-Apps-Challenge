@@ -3,6 +3,8 @@ import { Inicial } from "./Pages/Inicial/Inicial";
 import { NextPage } from "./Pages/Next-Page/next-page";
 import { Routes, Route } from "react-router-dom";
 import Particles from './Components/Particles/Particles.jsx';
+import { ChatBotHome } from "./Pages/ChatBot-Home/ChatBot-Home.jsx";
+import { ChatBot } from "./Pages/ChatBot/ChatBot.jsx";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Inicial />} />
+        <Route path="/astro" element={<ChatBotHome />} />
+        <Route path="/astro-chat" element={<ChatBot />} />
         <Route path="/next-page" element={<NextPage />} />
       </Routes>
     </>
