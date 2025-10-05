@@ -10,8 +10,10 @@ import LuciaImageCard from '../../assets/lucia-card.png'
 import Coronalda from "../../assets/Coronalda.png"
 
 export function Impact() {
+    const name = localStorage.getItem("userName");
+
     const falasAstro = [
-        "E você, *insira um nome*? A Coronalda pode te afetar também! Sabe o GPS do celular que sua família usa para viajar? Ele pode ficar um pouquinho impreciso. Os sinais de TV e internet via satélite também podem ter pequenas falhas. ",
+        `E você, ${name}? A Coronalda pode te afetar também! Sabe o GPS do celular que sua família usa para viajar? Ele pode ficar um pouquinho impreciso. Os sinais de TV e internet via satélite também podem ter pequenas falhas.`,
         "Mas a melhor parte é que, se você morar bem no norte ou no sul do planeta, pode ter a chance de ver um show de luzes incrível no céu: as auroras! O clima espacial nos mostra como estamos todos conectados ao nosso Sol e ao universo.",
     ];
 

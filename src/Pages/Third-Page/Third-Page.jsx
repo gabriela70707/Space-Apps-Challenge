@@ -15,7 +15,9 @@ export function ThirdPage() {
 					<div className={styles.divBalaoFala}>
 						<div className={styles.balaofala}>
 							<p>Any questions left? Talk to Astro, our Astronaut Buddy! 🚀👨‍🚀</p>
-							<Button text="Talk to Astro" />
+							<Link to="/astro">
+								<Button text="Talk to Astro" />
+							</Link>
 						</div>
 					</div>
 					<img src={question} alt="Question" />
