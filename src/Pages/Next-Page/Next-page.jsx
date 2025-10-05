@@ -43,7 +43,7 @@ export function NextPage() {
         }
 
         localStorage.setItem('userName', name);
-        navigate('/First-Part');
+        navigate('/Historia');
     }
 
     return (

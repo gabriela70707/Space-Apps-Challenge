@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import styles from "../Historia/Historia.module.css";
 
 export function Historia() {
