@@ -1,0 +1,88 @@
+/*Main*/
+
+.conteudoMain{
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+}
+
+
+/* Coronalda*/
+
+.divImgCoronalda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divBalaoFala {
+    text-align: center;
+    display: flex;
+    width: 60rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.linhaDivisoria {
+    display: flex;
+    margin: 0 auto;
+    width: 40rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.balaofala {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: end;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+}
+
+.balaofala p{
+    text-align: start;
+}
+
+.buttonSkip{
+    color: black;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Personagem Astro*/
+
+.divPersonagem{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.balaoFalaPersonagem{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 60rem;
+    padding: 2rem;
+    background-color: white;
+    color: black;
+    border-radius: 2rem;
+}
+.balaoFalaPersonagem p{
+    text-align: start;
+}
+
+.divImageTerra{
+    display: flex;
+    margin-right: 60rem;
+}
