@@ -29,7 +29,7 @@ function App() {
         <Route path="/astro" element={<ChatBotHome />} />
         <Route path="/astro-chat" element={<ChatBot />} />
         <Route path="/next-page" element={<NextPage />} />
-        <Route path="/third-page" element={<ThirdPage />} />
+        <Route path="/end" element={<ThirdPage />} />
         <Route path="/Historia" element={<Historia />} />
       </Routes>
     </>

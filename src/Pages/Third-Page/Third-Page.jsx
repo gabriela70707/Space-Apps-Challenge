@@ -1,6 +1,7 @@
 import { Footer } from "../../Components/Footer/Footer";
 import styles from "./Third-Page.module.css";
 import question from '../../assets/question.png';
+import Button from "../../Components/Button/Button";
 
 export function ThirdPage() {
 	return (
@@ -14,6 +15,7 @@ export function ThirdPage() {
 					<div className={styles.divBalaoFala}>
 						<div className={styles.balaofala}>
 							<p>Any questions left? Talk to Astro, our Astronaut Buddy! 🚀👨‍🚀</p>
+							<Button text="Talk to Astro" />
 						</div>
 					</div>
 					<img src={question} alt="Question" />
