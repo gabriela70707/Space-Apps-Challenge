@@ -5,7 +5,9 @@ import { Routes, Route } from "react-router-dom";
 import Particles from './Components/Particles/Particles.jsx';
 import { ChatBotHome } from "./Pages/ChatBot-Home/ChatBot-Home.jsx";
 import { ChatBot } from "./Pages/ChatBot/ChatBot.jsx";
-import {Historia} from "../src/Pages/Historia/Historia.jsx"
+import { ThirdPage } from "./Pages/Third-Page/Third-Page.jsx";
+import { Historia } from "./Pages/Historia/Historia.jsx";
+
 
 function App() {
   return (
@@ -28,7 +30,8 @@ function App() {
         <Route path="/astro" element={<ChatBotHome />} />
         <Route path="/astro-chat" element={<ChatBot />} />
         <Route path="/next-page" element={<NextPage />} />
-        <Route path="/history" element={<Historia />} />
+        <Route path="/third-page" element={<ThirdPage />} />
+        <Route path="/Historia" element={<Historia />} />
       </Routes>
     </>
 

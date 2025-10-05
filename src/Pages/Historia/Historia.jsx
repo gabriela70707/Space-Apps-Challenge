@@ -1,26 +1,26 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import styles from "../Historia/Historia.module.css";
-import Earth from "../../Components/Earth";
 import { Link } from 'react-router-dom';
 import Button from "../../Components/Button/Button";
 
-
 export function Historia() {
-  // Estado para controlar animação da Terra
   const [terraVisivel, setTerraVisivel] = useState(false);
+  const [coronaldaTerminou, setCoronaldaTerminou] = useState(false);
+  const [astroTerminou, setAstroTerminou] = useState(false); // Novo estado
+  const [indiceCoronalda, setIndiceCoronalda] = useState(0);
+  const [indiceAstro, setIndiceAstro] = useState(0);
+
+  const astroSectionRef = useRef(null);
   const terraRef = useRef(null);
-  let nome = localStorage.getItem("username")
 
+  const nome = localStorage.getItem("userName");
 
-
-  // 🧠 Falas da Coronalda
   const falasCoronalda = [
     `Olá ${nome}, eu sou a Coronalda! Nasci em uma mancha solar no nosso Sol quentinho. Pense em uma mancha solar como um lugar onde a energia do Sol fica toda enrolada, como um elástico.`,
     "Às vezes, esse elástico se estica tanto que... POW! Ele arrebenta! Foi assim que eu nasci, de uma explosão gigante chamada Ejeção de Massa Coronal, ou CME.",
     "Sou uma nuvem gigante de partículas e energia, e estou pronta para a minha maior aventura: viajar até a Terra!"
   ];
 
-  // 🧠 Falas do Astro
   const falasAstro = [
     "E lá foi a Coronalda, viajando super-rápida pelo espaço!",
     "Ela é tão veloz que levaria apenas alguns dias para chegar ao nosso planeta.",
@@ -29,22 +29,11 @@ export function Historia() {
     "Cheguei! Mas... o que é isso? A Terra tem um escudo mágico chamado campo magnético. Ele nos protege da maior parte da minha energia. Quando eu encontro esse escudo, a mágica acontece! Parte da minha energia desliza por ele em direção aos polos Norte e Sul do planeta. É como um grande show de luzes!"
   ];
 
-  // Índices das falas
-  const [indiceCoronalda, setIndiceCoronalda] = useState(0);
-  const [indiceAstro, setIndiceAstro] = useState(0);
-
-  // Estado para controlar se Coronalda terminou
-  const [coronaldaTerminou, setCoronaldaTerminou] = useState(false);
-
-  // Referência para a parte do Astro (para scroll automático)
-  const astroSectionRef = useRef(null);
-
-  // 👉 Avançar falas da Coronalda
+  // Avançar falas da Coronalda
   const avancarCoronalda = () => {
     if (indiceCoronalda < falasCoronalda.length - 1) {
       setIndiceCoronalda(indiceCoronalda + 1);
     } else {
-      // Quando terminar as falas → muda estado e scrolla para Astro
       setCoronaldaTerminou(true);
       setTimeout(() => {
         astroSectionRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -52,21 +41,18 @@ export function Historia() {
     }
   };
 
-  // 👉 Avançar falas do Astro
+  // Avançar falas do Astro
   const avancarAstro = () => {
     if (indiceAstro < falasAstro.length - 1) {
       setIndiceAstro(indiceAstro + 1);
     } else {
-      console.log("História completa 🎉");
       setTerraVisivel(true);
-
-      // Delay pequeno para garantir que a Terra esteja renderizada
+      setAstroTerminou(true); // Conteúdo só aparece depois
       setTimeout(() => {
         terraRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 100);
     }
   };
-
 
   return (
     <div className={styles.conteudoMain}>
@@ -108,8 +94,9 @@ export function Historia() {
                 alt="astro-personagem"
               />
             </figure>
+
             {terraVisivel && (
-              <div className={styles.divImageTerra + ` ${styles.slideIn}`}>
+              <div ref={terraRef} className={`${styles.divImageTerra} ${styles.slideIn}`}>
                 <figure>
                   <img
                     src="../src/assets/TerraComProtecao.png"
@@ -119,37 +106,39 @@ export function Historia() {
                 </figure>
               </div>
             )}
-
           </div>
         </div>
       )}
-      <div className={styles.sessaoAuroraBoreal}>
-        <div className={styles.sessao1}>
 
-          <div className={styles.dialogoAstro}>
-            <div className={styles.divImageAstro}>
+      {/* Conteúdo só aparece depois do Astro terminar */}
+      {astroTerminou && (
+        <div className={styles.sessaoAuroraBoreal}>
+          <div className={styles.sessao1}>
+            <div className={styles.dialogoAstro}>
+              <div className={styles.divImageAstro}>
+                <figure>
+                  <img src="../src/assets/imagemAstro2.png" alt="Astro2" />
+                </figure>
+              </div>
+              <div className={styles.dialogoAStro2}>
+                <p>
+                  Essa interação cria as luzes mais lindas que você pode imaginar: as Auroras Boreal e Austral! Mas a minha chegada também pode causar algumas coisinhas interessantes na Terra.
+                </p>
+              </div>
+            </div>
+            <div className={styles.imgAuroraBoreal}>
               <figure>
-                <img src="../src/assets/imagemAstro2.png" alt="Astro2" />
+                <img src="../src/assets/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
               </figure>
             </div>
-            <div className={styles.dialogoAStro2}>
-              <p>
-                Essa interação cria as luzes mais lindas que você pode imaginar: as Auroras Boreal e Austral! Mas a minha chegada também pode causar algumas coisinhas interessantes na Terra.
-              </p>
-            </div>
           </div>
-          <div className={styles.imgAuroraBoreal}>
-            <figure>
-              <img src="../src/assets/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
-            </figure>
+          <div className={styles.buttonEstelar}>
+            <Link to="/impact">
+              <Button text="CONTINUE" />
+            </Link>
           </div>
         </div>
-      <div className={styles.buttonEstelar}>
-        <Link to="/impact"> 
-          <Button text="CONTINUE" />
-        </Link>
-      </div>
-      </div>
+      )}
     </div>
   );
 }

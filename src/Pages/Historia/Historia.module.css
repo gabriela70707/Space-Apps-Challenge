@@ -3,7 +3,7 @@
 .conteudoMain{
     display: flex;
     flex-direction: column;
-    gap: 20rem;
+    gap: 50rem;
     overflow-x: hidden; /* impede scroll horizontal */
     max-width: 100%;
 }
@@ -43,8 +43,8 @@
     padding: 1rem;
     align-items: end;
     border-radius: 2rem;
-    background-color: white;
-    color: black;
+background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
 }
 
 .balaofala p{
@@ -52,7 +52,7 @@
 }
 
 .buttonSkip{
-    color: black;
+    color: rgb(255, 255, 255);
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
@@ -77,8 +77,8 @@
     align-items: end;
     width: 60rem;
     padding: 2rem;
-    background-color: white;
-    color: black;
+background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
     border-radius: 2rem;
 }
 .balaoFalaPersonagem p{
@@ -96,6 +96,7 @@
 .terraComProtecao{
     width: 30rem;
     position: relative;
+    top: 30rem;
     right: 65rem;
 }
 
@@ -153,8 +154,8 @@
     padding: 1rem;
     gap: 1rem;
     border-radius: 2rem;
-    background-color: white;
-    color: black;
+background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
     width: 30rem;
 }
 
