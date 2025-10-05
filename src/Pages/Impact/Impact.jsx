@@ -11,8 +11,8 @@ import Coronalda from "../../assets/Coronalda.png"
 
 export function Impact() {
     const falasAstro = [
-        "E você, *insira um nome*? A Coronalda pode te afetar também! Sabe o GPS do celular que sua família usa para viajar? Ele pode ficar um pouquinho impreciso. Os sinais de TV e internet via satélite também podem ter pequenas falhas. ",
-        "Mas a melhor parte é que, se você morar bem no norte ou no sul do planeta, pode ter a chance de ver um show de luzes incrível no céu: as auroras! O clima espacial nos mostra como estamos todos conectados ao nosso Sol e ao universo.",
+        "What about you, *insert name*? Coronalda can affect you too! You know the GPS on the cell phone your family uses for travel? It can be a little inaccurate. Satellite TV and internet signals can also have minor glitches",
+        "But the best part is that if you live far north or south on the planet, you might have the chance to see an incredible light show in the sky: the auroras! Space weather shows us how we are all connected to our Sun and the universe.",
     ];
 
     const [indiceAstro, setIndiceAstro] = useState(0);
@@ -39,8 +39,8 @@ export function Impact() {
 
                 <section className={styles.coronalda}>
                     <img src={Coronalda} alt="Image coronalda" />
-                    <div className={styles.balaoFalaPersonagem}>
-                        <p>Quer saber como eu afeto a vida de diferentes pessoas? Clique nos cards abaixo para descobrir!</p>
+                    <div className={styles.balaoFalaPersonagem}>                
+                        <p>Do you want to know how I affect different people lifes? Click on the cards to find out!</p>
                     </div>
                 </section>
 
