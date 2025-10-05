@@ -1,0 +1,42 @@
+footer {
+	background-color: #010818;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	
+	& section {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 20px 0;
+		gap: 10px;
+		
+		& nav {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			& ol {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				list-style: none;
+				text-align: center;
+
+				& a {
+					transition: color 0.3s;
+
+					&:hover {
+						color: #ffcc00;
+					}
+				}
+			}
+		} 
+	}
+}
+
+p {
+	font-size: 20px;
+	text-align: center;
+}
