@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: space-between;    
+    padding: 1rem 2rem;
+}
+
+.logo {
+    height: 4%;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.5rem;
+
+}
+
+:global a {
+    text-decoration: none;
+    color: #fff;
+}

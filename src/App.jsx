@@ -1,37 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Button from './Components/Button/Button'
-import './App.css'
+import { Header } from "./Components/Header/Header";
+import { Inicial } from "./Pages/Inicial/Inicial";
+import { NextPage } from "./Pages/Next-Page/next-page";
+import { Routes, Route } from "react-router-dom";
+import Particles from './Components/Particles/Particles.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-        <Button text={"Tá funcionando"}/>
-      </p>
+      <Particles
+        particleColors={["#4FE2FA", "#F7DA18", "#ffffff"]}
+        particleCount={200}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
+        className="background-particles"
+      />
+
+      <Header />
+      <Routes>
+        <Route path="/" element={<Inicial />} />
+        <Route path="/next-page" element={<NextPage />} />
+      </Routes>
     </>
-  )
+
+  );
 }
 
-export default App
+export default App;
