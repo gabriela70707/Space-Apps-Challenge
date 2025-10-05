@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = ({ text }) => {
+const Button = ({ text, functionOnClick }) => {
   return (
     <StyledWrapper>
       <div className="btn-container">
-        <button id="space-btn" name="space-button" type="submit">
+        <button id="space-btn" name="space-button" type="submit" onClick={functionOnClick}>
           <span>{text}</span>
           <div style={{position: 'absolute', left: '119.273px', top: '18.0747px', animationDelay: '3.37051s', transform: 'scale(0.196521)'}} className="star" />
           <div style={{position: 'absolute', left: '166.774px', top: '47.4519px', animationDelay: '3.03913s', transform: 'scale(0.33078)'}} className="star" />

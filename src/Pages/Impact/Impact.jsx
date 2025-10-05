@@ -10,6 +10,8 @@ import LuciaImageCard from '../../assets/lucia-card.png'
 import Coronalda from "../../assets/Coronalda.png"
 
 export function Impact() {
+    const name = localStorage.getItem("userName");
+
     const falasAstro = [
         "What about you, *insert name*? Coronalda can affect you too! You know the GPS on the cell phone your family uses for travel? It can be a little inaccurate. Satellite TV and internet signals can also have minor glitches",
         "But the best part is that if you live far north or south on the planet, you might have the chance to see an incredible light show in the sky: the auroras! Space weather shows us how we are all connected to our Sun and the universe.",
@@ -72,12 +74,8 @@ export function Impact() {
                         </div>
                     </div>
                 </section>
-
                 <Link to="/end"><Button text={"Continue"} /></Link>
             </section>
-
-
-
         </main>
     );
 }
