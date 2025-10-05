@@ -15,13 +15,13 @@ export function ThirdPage() {
 				<section className={styles.section_second}>
 					<div className={styles.divBalaoFala}>
 						<div className={styles.balaofala}>
-							<p>Any questions left? Talk to Astro, our Astronaut Buddy! 🚀👨‍🚀</p>
+							<img src={question} alt="Question" />
+							<p>Any questions left? Talk to Astro, our Astronaut Buddy!</p>
 							<Link to="/astro">
 								<Button text="Talk to Astro" />
 							</Link>
 						</div>
 					</div>
-					<img src={question} alt="Question" />
 				</section>
 			</main>
 			<Footer />
