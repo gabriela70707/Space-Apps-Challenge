@@ -1,6 +1,7 @@
 import styles from './Inicial.module.css';
 import img from '../../assets/space-icon.png';
 import { Link } from 'react-router-dom';
+import Button from '../../Components/Button/Button'
 
 export function Inicial() {
     return (
@@ -12,7 +13,7 @@ export function Inicial() {
                 <p>Did you know that the sun, our giant star, 
                     sometimes has energy “burps” and “sneezes”? It is called Space Weather! 
                 </p>
-                <button><Link to="/next-page">CONTINUE</Link></button>
+               <Link to="/next-page"><Button text={"Continue"}/></Link>
             </section>
 
             <img src={img} alt="Space Icon"/>
