@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     gap: 20rem;
+    overflow-x: hidden; /* impede scroll horizontal */
+    max-width: 100%;
 }
 
 
@@ -66,6 +68,7 @@
     align-items: center;
     justify-content: center;
     gap: 3rem;
+    overflow-x: hidden; /* impede scroll horizontal */
 }
 
 .balaoFalaPersonagem{
@@ -84,5 +87,87 @@
 
 .divImageTerra{
     display: flex;
-    margin-right: 60rem;
+    position: absolute;
+    top: 90rem;
+    right: 70rem;
+}
+
+/* Terra com proteção */
+.terraComProtecao{
+    width: 30rem;
+    position: relative;
+    right: 65rem;
+}
+
+.divImageTerra {
+  position: absolute; /* ou relative dentro do container */
+  right: 1100px; /* começa fora da tela à direita */
+  transition: right 1s ease-out; /* duração da animação */
+}
+
+.divImageTerra.slideIn {
+  right: 0; /* entra deslizando para a posição original */
+    animation: slideInTerra 1.2s ease-out forwards;
+}
+
+.divImageTerra {
+  transform: translateX(100%); /* fora da tela */
+  transition: transform 1s ease-out;
+}
+
+@keyframes slideInTerra {
+  0% {
+    transform: translateX(100%) scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-10%) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Dialogo Astro 2 */
+
+.sessao1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+}
+
+.dialogoAstro{
+    position: relative;
+    bottom: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    gap: 2rem;
+}
+
+
+
+.dialogoAStro2{
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+    width: 30rem;
+}
+
+.imgAuroraBoreal{
+    position: relative;
+    bottom: 2rem;
+    width: 20rem;
+}
+
+.buttonEstelar{
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }

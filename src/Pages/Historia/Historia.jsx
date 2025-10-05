@@ -1,10 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "../Historia/Historia.module.css";
+import Earth from "../../Components/Earth";
+import { Link } from 'react-router-dom';
+import Button from "../../Components/Button/Button";
+
 
 export function Historia() {
+  // Estado para controlar animação da Terra
+  const [terraVisivel, setTerraVisivel] = useState(false);
+  const terraRef = useRef(null);
+  let nome = localStorage.getItem("username")
+
+
+
   // 🧠 Falas da Coronalda
   const falasCoronalda = [
-    "Olá *insira o nome*, eu sou a Coronalda! Nasci em uma mancha solar no nosso Sol quentinho. Pense em uma mancha solar como um lugar onde a energia do Sol fica toda enrolada, como um elástico.",
+    `Olá ${nome}, eu sou a Coronalda! Nasci em uma mancha solar no nosso Sol quentinho. Pense em uma mancha solar como um lugar onde a energia do Sol fica toda enrolada, como um elástico.`,
     "Às vezes, esse elástico se estica tanto que... POW! Ele arrebenta! Foi assim que eu nasci, de uma explosão gigante chamada Ejeção de Massa Coronal, ou CME.",
     "Sou uma nuvem gigante de partículas e energia, e estou pronta para a minha maior aventura: viajar até a Terra!"
   ];
@@ -14,7 +25,8 @@ export function Historia() {
     "E lá foi a Coronalda, viajando super-rápida pelo espaço!",
     "Ela é tão veloz que levaria apenas alguns dias para chegar ao nosso planeta.",
     "No caminho, ela dança com o vento solar, um fluxo constante de partículas que o Sol sopra o tempo todo.",
-    "A Terra ainda está longe, mas eu já consigo ver um pontinho azul brilhante..."
+    "A Terra ainda está longe, mas eu já consigo ver um pontinho azul brilhante...",
+    "Cheguei! Mas... o que é isso? A Terra tem um escudo mágico chamado campo magnético. Ele nos protege da maior parte da minha energia. Quando eu encontro esse escudo, a mágica acontece! Parte da minha energia desliza por ele em direção aos polos Norte e Sul do planeta. É como um grande show de luzes!"
   ];
 
   // Índices das falas
@@ -46,9 +58,15 @@ export function Historia() {
       setIndiceAstro(indiceAstro + 1);
     } else {
       console.log("História completa 🎉");
-      // Aqui você pode redirecionar para próxima tela, habilitar um botão, etc.
+      setTerraVisivel(true);
+
+      // Delay pequeno para garantir que a Terra esteja renderizada
+      setTimeout(() => {
+        terraRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
     }
   };
+
 
   return (
     <div className={styles.conteudoMain}>
@@ -80,7 +98,7 @@ export function Historia() {
           <div className={styles.balaoFalaPersonagem}>
             <p>{falasAstro[indiceAstro]}</p>
             <button onClick={avancarAstro} className={styles.buttonSkip}>
-                Skip
+              Skip
             </button>
           </div>
           <div className={styles.divImgPersonagem}>
@@ -90,14 +108,47 @@ export function Historia() {
                 alt="astro-personagem"
               />
             </figure>
+            {terraVisivel && (
+              <div className={styles.divImageTerra + ` ${styles.slideIn}`}>
+                <figure>
+                  <img
+                    src="../src/assets/TerraComProtecao.png"
+                    alt="terra-image"
+                    className={styles.terraComProtecao}
+                  />
+                </figure>
+              </div>
+            )}
+
           </div>
         </div>
       )}
+      <div className={styles.sessaoAuroraBoreal}>
+        <div className={styles.sessao1}>
 
-      <div className={styles.divImageTerra}>
-        <figure>
-            <img src="../src/assets/space-icon.png" alt="space-icon" className={styles.imgTerra}/>
-        </figure>
+          <div className={styles.dialogoAstro}>
+            <div className={styles.divImageAstro}>
+              <figure>
+                <img src="../src/assets/imagemAstro2.png" alt="Astro2" />
+              </figure>
+            </div>
+            <div className={styles.dialogoAStro2}>
+              <p>
+                Essa interação cria as luzes mais lindas que você pode imaginar: as Auroras Boreal e Austral! Mas a minha chegada também pode causar algumas coisinhas interessantes na Terra.
+              </p>
+            </div>
+          </div>
+          <div className={styles.imgAuroraBoreal}>
+            <figure>
+              <img src="../src/assets/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
+            </figure>
+          </div>
+        </div>
+      <div className={styles.buttonEstelar}>
+        <Link to="/impact"> 
+          <Button text="CONTINUE" />
+        </Link>
+      </div>
       </div>
     </div>
   );
