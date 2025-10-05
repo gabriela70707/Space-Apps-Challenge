@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Button from './Components/Button/Button'
 import './App.css'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
+        <Button text={"Tá funcionando"}/>
       </p>
     </>
   )
