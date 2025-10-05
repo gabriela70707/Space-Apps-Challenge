@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    display: grid;
+    justify-content: center;
+    
+}
+
+.section{
+    display: grid;
+    justify-items: center;
+    gap: 3vh;
+}
+
+.section h1{
+    font-size: 7vh;
+}
+
+.coronalda{
+    display: flex;
+    gap: 2vw;
+    width: 100%;
+    padding: 15vh;
+}
+
+.coronalda img{
+    height: 30vh;
+}
+
+.cards{
+    padding: 3vh;
+    display: flex;
+    gap: 2.7vw;
+}
+
+.balaofala {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: end;
+    border-radius: 2rem;
+    background-color: white;
+    color: black;
+}
+
+.balaofala p{
+    text-align: start;
+}
+
+.buttonSkip{
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.divPersonagem{
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    overflow-x: hidden; /* impede scroll horizontal */
+}
+
+.balaoFalaPersonagem{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 50rem;
+    padding: 2rem;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
+    border-radius: 2rem;
+}
+
+.balaoFalaPersonagem p{
+    text-align: start;
+    font-size: 2.8vh;
+}
