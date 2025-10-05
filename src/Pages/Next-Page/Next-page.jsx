@@ -1,13 +1,19 @@
-import styles from './Next-Page.module.css';
-import { Link } from 'react-router-dom';
-import star from '../../assets/Star.png';
-import img from '../../assets/space-icon.png';
 import Astro from '../../assets/AstroWithDialog.png';
+import Button from '../../components/Button/Button';
+import styles from './Next-Page.module.css';
+
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+// import star from '../../assets/Star.png';
+// import img from '../../assets/space-icon.png';
 
 export function NextPage() {
     const secondSection = useRef(null);
     const [countdown, setCountdown] = useState(10);
+    const [name, setName] = useState("");
+    const [mensagem, setMensagem] = useState("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -22,7 +28,7 @@ export function NextPage() {
 
         const timer = setTimeout(() => {
             secondSection.current?.scrollIntoView({ behavior: 'smooth' });
-        }, 100000);
+        }, 10000);
 
         return () => {
             clearInterval(interval);
@@ -30,10 +36,20 @@ export function NextPage() {
         } 
     }, []);
 
+    const handleStart = () => {
+        if (name.trim() === '') {
+            setMensagem('Please enter your name before proceeding.');
+            return;
+        }
+
+        localStorage.setItem('userName', name);
+        navigate('/First-Part');
+    }
+
     return (
         <main className={styles.main}>
 
-            <img src={star} alt="Star" />
+            {/* <img src={star} alt="Star" /> */}
             <section className={styles.firstSection}>
                 <div className="">
                     <p>
@@ -47,17 +63,28 @@ export function NextPage() {
                 {/* tem que colocar a setinha pra baixo aqui */}
             </section>
 
-            <div className={styles.earthImg}>
+            {/* <div className={styles.earthImg}>
                 <img src={img} alt="Space Icon"/>
-            </div>
+            </div> */}
 
-            <section ref={secondSection}>
-                <div><img src={Astro} alt="Astro"/></div>
-                <h2>What's your name?</h2>
-                <input type="text" placeholder="Type your name here..."/>
-                <button><Link to="/First-Part">Let's Start</Link></button>
+            <section className={styles.secondSection} ref={secondSection}>
+                <div>
+                    <img src={Astro} alt="Astro"/>
+                </div>
+                <div className={styles.texts}>
+                    <h2>What's your name?</h2>
+                    <input 
+                        type="text" 
+                        placeholder="Type your name here..."
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <Button text={"Let's Start"} functionOnClick={handleStart}/>
+                    {mensagem &&
+                        <p className={styles.mesageError}>{ mensagem }</p>
+                    }
+                </div>
             </section>
-
         </main>
     );
 }
