@@ -112,8 +112,9 @@ const StyledWrapper = styled.div`
 
   button span {
     color: white;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 16px;
+    font-family: 'Roboto'
   }
 
   button#space-btn div.star {
