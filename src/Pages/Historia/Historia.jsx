@@ -126,7 +126,7 @@ export function Historia() {
           <div className={styles.divImgPersonagem}>
             <figure>
               <img
-                src="../../../public/images/AstroWithDialog.png"
+                src="/images/AstroWithDialog.png"
                 alt="astro-personagem"
               />
             </figure>
@@ -135,13 +135,13 @@ export function Historia() {
               <div ref={terraRef} className={`${styles.divImageTerra} ${styles.slideIn}`}>
                 <figure>
                   <img
-                    src="../../../public/images/TerraComProtecao.png"
+                    src="/images/TerraComProtecao.png"
                     alt="terra-image"
                     className={styles.terraComProtecao}
                   />
                 </figure>
                 <figure>
-                  <img src="../../../public/images/CoronaldaVirada.png" alt="" />
+                  <img src="/images/CoronaldaVirada.png" alt="" />
                 </figure>
               </div>
             )}
@@ -168,7 +168,7 @@ export function Historia() {
             </div>
             <div className={styles.imgAuroraBoreal}>
               <figure>
-                <img src="../../../public/images/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
+                <img src="/images/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
               </figure>
             </div>
           </div>
