@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "../Historia/Historia.module.css";
 import { Link } from 'react-router-dom';
 import Button from "../../Components/Button/Button";
@@ -6,12 +6,14 @@ import Button from "../../Components/Button/Button";
 export function Historia() {
   const [terraVisivel, setTerraVisivel] = useState(false);
   const [coronaldaTerminou, setCoronaldaTerminou] = useState(false);
-  const [astroTerminou, setAstroTerminou] = useState(false); // Novo estado
+  const [astroTerminou, setAstroTerminou] = useState(false);
+  const [mostrarAurora, setMostrarAurora] = useState(false);
   const [indiceCoronalda, setIndiceCoronalda] = useState(0);
   const [indiceAstro, setIndiceAstro] = useState(0);
 
   const astroSectionRef = useRef(null);
   const terraRef = useRef(null);
+  const auroraSectionRef = useRef(null);
 
   const nome = localStorage.getItem("userName");
 
@@ -29,15 +31,53 @@ export function Historia() {
     "Cheguei! Mas... o que é isso? A Terra tem um escudo mágico chamado campo magnético. Ele nos protege da maior parte da minha energia. Quando eu encontro esse escudo, a mágica acontece! Parte da minha energia desliza por ele em direção aos polos Norte e Sul do planeta. É como um grande show de luzes!"
   ];
 
+  // Efeito para rolar quando a Coronalda terminar
+  useEffect(() => {
+    if (coronaldaTerminou) {
+      setTimeout(() => {
+        astroSectionRef.current?.scrollIntoView({ 
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 500);
+    }
+  }, [coronaldaTerminou]);
+
+  // Efeito para controlar o fluxo quando o Astro terminar
+  useEffect(() => {
+    if (astroTerminou) {
+      // Primeiro: mostrar a Terra
+      setTerraVisivel(true);
+      
+      // Esperar a animação da Terra completar (1.5 segundos)
+      setTimeout(() => {
+        terraRef.current?.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "center" 
+        });
+        
+        // Esperar mais 3 segundos para ver a Terra, depois mostrar Aurora
+        setTimeout(() => {
+          setMostrarAurora(true);
+          
+          // Esperar um pouco antes de rolar para a Aurora
+          setTimeout(() => {
+            auroraSectionRef.current?.scrollIntoView({ 
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 800);
+        }, 1000);
+      }, 500); // Tempo para a animação da Terra
+    }
+  }, [astroTerminou]);
+
   // Avançar falas da Coronalda
   const avancarCoronalda = () => {
     if (indiceCoronalda < falasCoronalda.length - 1) {
       setIndiceCoronalda(indiceCoronalda + 1);
     } else {
       setCoronaldaTerminou(true);
-      setTimeout(() => {
-        astroSectionRef.current?.scrollIntoView({ behavior: "smooth" });
-      }, 600);
     }
   };
 
@@ -46,11 +86,7 @@ export function Historia() {
     if (indiceAstro < falasAstro.length - 1) {
       setIndiceAstro(indiceAstro + 1);
     } else {
-      setTerraVisivel(true);
-      setAstroTerminou(true); // Conteúdo só aparece depois
-      setTimeout(() => {
-        terraRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
+      setAstroTerminou(true);
     }
   };
 
@@ -110,9 +146,9 @@ export function Historia() {
         </div>
       )}
 
-      {/* Conteúdo só aparece depois do Astro terminar */}
-      {astroTerminou && (
-        <div className={styles.sessaoAuroraBoreal}>
+      {/* Conteúdo só aparece depois da pausa */}
+      {mostrarAurora && (
+        <div className={styles.sessaoAuroraBoreal} ref={auroraSectionRef}>
           <div className={styles.sessao1}>
             <div className={styles.dialogoAstro}>
               <div className={styles.divImageAstro}>

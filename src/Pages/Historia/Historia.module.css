@@ -3,8 +3,8 @@
 .conteudoMain {
     display: flex;
     flex-direction: column;
-    gap: 50rem;
     overflow-x: hidden;
+    gap: 5rem;
     /* impede scroll horizontal */
     max-width: 100%;
 }
@@ -50,6 +50,9 @@
 
 .balaofala p {
     text-align: start;
+    width: 100%; /* Garante que o parágrafo ocupe toda a largura */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
 }
 
 .buttonSkip {
@@ -86,6 +89,9 @@
 
 .balaoFalaPersonagem p {
     text-align: start;
+    width: 100%; /* Garante que o parágrafo ocupe toda a largura */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
 }
 
 .divImageTerra {
@@ -99,7 +105,8 @@
 .terraComProtecao {
     width: 30rem;
     position: relative;
-    top: 30rem;
+    /* top: -10rem; */
+    bottom: 10rem;
     right: 65rem;
 }
 
@@ -115,7 +122,7 @@
 .divImageTerra.slideIn {
     right: 0;
     /* entra deslizando para a posição original */
-    animation: slideInTerra 1.2s ease-out forwards;
+    animation: slideInTerra 0.9s ease-out forwards;
 }
 
 .divImageTerra {
@@ -150,23 +157,31 @@
 }
 
 .dialogoAstro {
-    position: relative;
-    bottom: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
 }
 
-
-
 .dialogoAStro2 {
+    text-align: start;
     padding: 1rem;
     gap: 1rem;
     border-radius: 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     color: rgb(255, 255, 255);
     width: 30rem;
+}
+
+.dialogoAStro2 p{
+    text-align: start;
+    width: 100%; /* Garante que o parágrafo ocupe toda a largura */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+}
+
+.sessaoAuroraBoreal{
+    margin-top: 20rem;
 }
 
 .imgAuroraBoreal {
@@ -176,7 +191,7 @@
 }
 
 .buttonEstelar {
-    padding-bottom: 5rem;
+    padding-bottom: 20rem;
     display: flex;
     justify-content: center;
     align-items: center;
