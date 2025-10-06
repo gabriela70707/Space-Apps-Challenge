@@ -1,5 +1,4 @@
 import styles from './ChatBot.module.css';
-import Coronalda from "/images/Coronalda.png"
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 
@@ -71,7 +70,7 @@ export function ChatBot() {
                     <Link to={"/"}> 
                         <button>← Voltar</button> 
                     </Link>
-                    <img src={Coronalda} alt="character image" className={styles.characterImage} />
+                    <img src="/images/Coronalda.png" alt="character image" className={styles.characterImage} />
                 </section>
 
                 <section className={styles.chat}>

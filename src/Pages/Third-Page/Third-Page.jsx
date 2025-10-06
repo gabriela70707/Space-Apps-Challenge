@@ -1,7 +1,7 @@
 import { Footer } from "../../Components/Footer/Footer";
 import { useEffect } from "react";
 import styles from "./Third-Page.module.css";
-import question from '../../../public/images/question.png';
+
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export function ThirdPage() {
 				<section className={styles.section_second}>
 					<div className={styles.divBalaoFala}>
 						<div className={styles.balaofala}>
-							<img src={question} alt="Question" />
+							<img src="/images/question.png" alt="Question" />
 							<p>Any questions left? Talk to Astro, our Astronaut Buddy!</p>
 							<Link to="/astro">
 								<Button text="Talk to Astro" />

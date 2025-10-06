@@ -156,7 +156,7 @@ export function Historia() {
             <div className={styles.dialogoAstro}>
               <div className={styles.divImageAstro}>
                 <figure>
-                  <img src="../../../public/images/imagemAstro2.png" alt="Astro2" />
+                  <img src="/images/imagemAstro2.png" alt="Astro2" />
                 </figure>
               </div>
               <div className={styles.dialogoAStro2}>

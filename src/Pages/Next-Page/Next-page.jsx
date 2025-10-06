@@ -1,4 +1,4 @@
-import Astro from '../../../public/images/AstroWithDialog.png';
+
 import Button from '../../Components/Button/Button';
 import styles from './Next-Page.module.css';
 
@@ -69,7 +69,7 @@ export function NextPage() {
 
             <section className={styles.secondSection} ref={secondSection}>
                 <div>
-                    <img src={Astro} alt="Astro" />
+                    <img src="/images/AstroWithDialog.png" alt="Astro" />
                 </div>
                 <div className={styles.texts}>
                     <h2>What's your name?</h2>
