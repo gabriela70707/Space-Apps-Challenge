@@ -33,7 +33,7 @@ export function NextPage() {
         return () => {
             clearInterval(interval);
             clearTimeout(timer);
-        } 
+        }
     }, []);
 
     const handleStart = () => {
@@ -69,19 +69,25 @@ export function NextPage() {
 
             <section className={styles.secondSection} ref={secondSection}>
                 <div>
-                    <img src={Astro} alt="Astro"/>
+                    <img src={Astro} alt="Astro" />
                 </div>
                 <div className={styles.texts}>
                     <h2>What's your name?</h2>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Type your name here..."
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') {
+                                handleStart();
+                            }
+                        }}
                     />
-                    <Button text={"Let's Start"} functionOnClick={handleStart}/>
+
+                    <Button text={"Let's Start"} functionOnClick={handleStart} />
                     {mensagem &&
-                        <p className={styles.mesageError}>{ mensagem }</p>
+                        <p className={styles.mesageError}>{mensagem}</p>
                     }
                 </div>
             </section>
