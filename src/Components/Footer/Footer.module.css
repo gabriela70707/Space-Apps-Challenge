@@ -1,4 +1,5 @@
 footer {
+	display: flex;
 	margin-top: 14vh;
 	background-color: #010818;
 	bottom: 0;
