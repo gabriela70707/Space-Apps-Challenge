@@ -7,12 +7,12 @@ export function ChatBot() {
     const [messages, setMessages] = useState([
         { 
             id: 1, 
-            text: 'O que é Clima Espacial?', 
+            text: 'What is the Spacial Wheather?', 
             isUser: true 
         },
         { 
             id: 2, 
-            text: 'Clima Espacial são as mudanças no ambiente espacial, causadas principalmente pelo nosso Sol. Pense nele como o clima da Terra, com dias calmos e dias de tempestade, só que acontece no espaço!', 
+            text: '"Space weather refers to changes in the space environment, mainly caused by our Sun. Think of it like Earth weather with calm days and stormy ones—but happening out in space!', 
             isUser: false 
         }
     ]);
@@ -21,18 +21,18 @@ export function ChatBot() {
 
     // Perguntas fixas
     const questions = [
-        "O que é Clima Espacial?",
-        "Porque é tão importante saber sobre o clima espacial?",
-        "Tempestades solares são perigosas?",
-        "O que são Auroras?"
+        "What is Space Weather?",
+        "Why is it so important to know about space weather?",
+        "Why solar storms are so dangerous?",
+        "What is Auroras"
     ];
 
     // Respostas pré-definidas
     const responses = {
-        "O que é Clima Espacial?": "Clima Espacial são as mudanças no ambiente espacial, causadas principalmente pelo nosso Sol. Pense nele como o clima da Terra, com dias calmos e dias de tempestade, só que acontece no espaço!",
-        "Porque é tão importante saber sobre o clima espacial?": "O clima espacial pode afetar satélites, sistemas de comunicação, redes elétricas e até a saúde de astronautas. Monitorar essas condições ajuda a proteger nossa tecnologia e infraestrutura.",
-        "Tempestades solares são perigosas?": "Para nós, aqui na superfície da Terra, não! Estamos protegidos pelo campo magnético e pela atmosfera do nosso planeta. Mas elas podem afetar a tecnologia da qual dependemos, como satélites e redes elétricas, e são um risco para astronautas no espaço.",
-        "O que são Auroras?": "Auroras são luzes coloridas e brilhantes que aparecem no céu perto dos polos Norte e Sul. Elas acontecem quando as partículas de energia do Sol, como as da minha amiga Coronalda, se chocam com os gases da nossa atmosfera. É um verdadeiro espetáculo da natureza!"
+        "What is Space Weather?": "Space weather refers to changes in the space environment, mainly caused by our Sun. Think of it like Earth's weather—with calm days and stormy ones—but happening in space!",
+        "Why is it so important to know about space weather?": "Space weather can affect satellites, communication systems, power grids, and even the health of astronauts. Monitoring these conditions helps protect our technology and infrastructure.",
+        "Why solar storms are so dangerous?": "For us here on Earth's surface, no! We're protected by the planet's magnetic field and atmosphere. But they can affect the technology we rely on, like satellites and power grids, and pose a risk to astronauts in space.",
+        "What is Auroras": "Auroras are bright, colorful lights that appear in the sky near the North and South Poles. They happen when energetic particles from the Sun—like those from my friend Coronalda—collide with gases in our atmosphere. It's a true natural spectacle!"
     };
 
     const scrollToBottom = () => {
@@ -57,7 +57,7 @@ export function ChatBot() {
         setTimeout(() => {
             const botMessage = {
                 id: messages.length + 2,
-                text: responses[question] || "Desculpe, não tenho uma resposta para essa pergunta.",
+                text: responses[question] || "Sorry, i do not have the answer for this question.",
                 isUser: false
             };
             setMessages(prev => [...prev, botMessage]);

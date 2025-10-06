@@ -47,7 +47,7 @@ export function Impact() {
                 <section className={styles.coronalda}>
                     <img src={Coronalda} alt="Image coronalda" />
                     <div className={styles.balaoFalaPersonagem}>
-                        <p>Do you want to know how I affect different people lifes? Click on the cards to find out!</p>
+                        <p>Do you want to know how I affect different people lifes? Pass the mouse on the cards to find out!</p>
                     </div>
                 </section>
 

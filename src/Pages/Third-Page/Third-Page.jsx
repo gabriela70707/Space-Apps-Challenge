@@ -1,10 +1,15 @@
 import { Footer } from "../../Components/Footer/Footer";
+import { useEffect } from "react";
 import styles from "./Third-Page.module.css";
 import question from '../../assets/question.png';
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
 
 export function ThirdPage() {
+	useEffect(() => {
+		// Garante que ao entrar nesta página, o scroll volte ao topo
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<>
 			<main className={styles.main}>
