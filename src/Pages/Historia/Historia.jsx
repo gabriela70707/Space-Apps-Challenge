@@ -96,7 +96,7 @@ export function Historia() {
       <div className={styles.divImgCoronalda}>
         <figure>
           <img
-            src="../../../public/images/Coronalda.png"
+            src="/images/Coronalda.png"
             alt="image-Coronalda"
             className={styles.imgCoronalda}
           />
