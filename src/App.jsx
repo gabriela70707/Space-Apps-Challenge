@@ -1,4 +1,4 @@
-import { Header } from "./Components/Header/Header";
+import { Header } from "./components/Header/Header";
 import { Inicial } from "./Pages/Inicial/Inicial";
 import { NextPage } from "./Pages/Next-Page/Next-page.jsx";
 import { Routes, Route } from "react-router-dom";
