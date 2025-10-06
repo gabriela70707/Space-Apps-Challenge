@@ -1,5 +1,5 @@
 import Astro from '../../../public/images/AstroWithDialog.png';
-import Button from '../../components/Button/Button';
+import Button from '../../Components_FIX/Button/Button';
 import styles from './Next-Page.module.css';
 
 import { Link, useNavigate } from 'react-router-dom';

@@ -1,8 +1,8 @@
-import { Header } from "./Components/Header/Header";
+import { Header } from "./Components_FIX/Header/Header.jsx";
 import { Inicial } from "./Pages/Inicial/Inicial";
 import { NextPage } from "./Pages/Next-Page/Next-page.jsx";
 import { Routes, Route } from "react-router-dom";
-import Particles from './Components/Particles/Particles.jsx';
+import Particles from './Components_FIX/Particles/Particles.jsx';
 import { ChatBotHome } from "./Pages/ChatBot-Home/ChatBot-Home.jsx";
 import { ChatBot } from "./Pages/ChatBot/ChatBot.jsx";
 import { ThirdPage } from "./Pages/Third-Page/Third-Page.jsx";

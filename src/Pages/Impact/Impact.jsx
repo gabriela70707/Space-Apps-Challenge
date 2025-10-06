@@ -1,8 +1,8 @@
 import styles from './Impact.module.css';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../Components/Button/Button'
-import Card from '../../Components/Card/Card'
+import Button from '../../Components_FIX/Button/Button'
+import Card from '../../Components_FIX/Card/Card'
 import AnaImageCard from '../../../public/images/ana-card.png'
 import PedroImageCard from '../../../public/images/pedro-card.png'
 import JoaoImageCard from '../../../public/images/joao-card.png'

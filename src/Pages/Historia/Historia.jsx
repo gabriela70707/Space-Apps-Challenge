@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "../Historia/Historia.module.css";
 import { Link } from 'react-router-dom';
-import Button from "../../Components/Button/Button";
+import Button from "../../Components_FIX/Button/Button";
 
 export function Historia() {
   const [terraVisivel, setTerraVisivel] = useState(false);
