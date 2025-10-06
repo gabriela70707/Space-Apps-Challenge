@@ -96,7 +96,7 @@ export function Historia() {
       <div className={styles.divImgCoronalda}>
         <figure>
           <img
-            src="../src/assets/Coronalda.png"
+            src="../../../public/images/Coronalda.png"
             alt="image-Coronalda"
             className={styles.imgCoronalda}
           />
@@ -126,7 +126,7 @@ export function Historia() {
           <div className={styles.divImgPersonagem}>
             <figure>
               <img
-                src="../src/assets/AstroWithDialog.png"
+                src="../../../public/images/AstroWithDialog.png"
                 alt="astro-personagem"
               />
             </figure>
@@ -135,13 +135,13 @@ export function Historia() {
               <div ref={terraRef} className={`${styles.divImageTerra} ${styles.slideIn}`}>
                 <figure>
                   <img
-                    src="../src/assets/TerraComProtecao.png"
+                    src="../../../public/images/TerraComProtecao.png"
                     alt="terra-image"
                     className={styles.terraComProtecao}
                   />
                 </figure>
                 <figure>
-                  <img src="../src/assets/CoronaldaVirada.png" alt="" />
+                  <img src="../../../public/images/CoronaldaVirada.png" alt="" />
                 </figure>
               </div>
             )}
@@ -156,7 +156,7 @@ export function Historia() {
             <div className={styles.dialogoAstro}>
               <div className={styles.divImageAstro}>
                 <figure>
-                  <img src="../src/assets/imagemAstro2.png" alt="Astro2" />
+                  <img src="../../../public/images/imagemAstro2.png" alt="Astro2" />
                 </figure>
               </div>
               <div className={styles.dialogoAStro2}>
@@ -168,7 +168,7 @@ export function Historia() {
             </div>
             <div className={styles.imgAuroraBoreal}>
               <figure>
-                <img src="../src/assets/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
+                <img src="../../../public/images/auroraBorealFundoTransparente.png" alt="imagem-aurora-boreal" className={styles.imgAuroraBoreal} />
               </figure>
             </div>
           </div>

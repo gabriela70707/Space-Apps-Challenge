@@ -1,4 +1,4 @@
-import Astro from '../../assets/AstroWithDialog.png';
+import Astro from '../../../public/images/AstroWithDialog.png';
 import Button from '../../components/Button/Button';
 import styles from './Next-Page.module.css';
 

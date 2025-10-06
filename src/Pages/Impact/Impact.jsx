@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../Components/Button/Button'
 import Card from '../../Components/Card/Card'
-import AnaImageCard from '../../assets/ana-card.png'
-import PedroImageCard from '../../assets/pedro-card.png'
-import JoaoImageCard from '../../assets/joao-card.png'
-import LuciaImageCard from '../../assets/lucia-card.png'
-import Coronalda from "../../assets/Coronalda.png"
+import AnaImageCard from '../../../public/images/ana-card.png'
+import PedroImageCard from '../../../public/images/pedro-card.png'
+import JoaoImageCard from '../../../public/images/joao-card.png'
+import LuciaImageCard from '../../../public/images/lucia-card.png'
+import Coronalda from "../../../public/images/Coronalda.png"
 
 export function Impact() {
     const name = localStorage.getItem("userName");
@@ -73,7 +73,7 @@ export function Impact() {
                             <div className={styles.divImgPersonagem}>
                                 <figure>
                                     <img
-                                        src="../src/assets/astronauta.png"
+                                        src='../../../public/images/astronauta.png'
                                         alt="astro-personagem"
                                     />
                                 </figure>

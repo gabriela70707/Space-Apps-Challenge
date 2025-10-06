@@ -1,7 +1,7 @@
 import { Footer } from "../../Components/Footer/Footer";
 import { useEffect } from "react";
 import styles from "./Third-Page.module.css";
-import question from '../../assets/question.png';
+import question from '../../../public/images/question.png';
 import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
 
