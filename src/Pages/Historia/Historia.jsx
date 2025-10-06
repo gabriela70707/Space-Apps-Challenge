@@ -103,7 +103,7 @@ export function Historia() {
         </figure>
 
         <div className={styles.divBalaoFala}>
-          <h2 className={styles.title}>História da Coronalda</h2>
+          <h2 className={styles.title}>Coronalda History</h2>
           <hr className={styles.linhaDivisoria} />
           <div className={styles.balaofala}>
             <p>{falasCoronalda[indiceCoronalda]}</p>

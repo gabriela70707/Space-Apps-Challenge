@@ -1,6 +1,6 @@
 import { Header } from "./Components/Header/Header";
 import { Inicial } from "./Pages/Inicial/Inicial";
-import { NextPage } from "./Pages/Next-Page/next-page";
+import { NextPage } from "./Pages/Next-Page/Next-page.jsx";
 import { Routes, Route } from "react-router-dom";
 import Particles from './Components/Particles/Particles.jsx';
 import { ChatBotHome } from "./Pages/ChatBot-Home/ChatBot-Home.jsx";
