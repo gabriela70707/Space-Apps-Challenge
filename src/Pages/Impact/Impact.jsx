@@ -46,7 +46,7 @@ export function Impact() {
 
                 <section className={styles.coronalda}>
                     <img src={Coronalda} alt="Image coronalda" />
-                    <div className={styles.balaoFalaPersonagem}>                
+                    <div className={styles.balaoFalaPersonagem}>
                         <p>Do you want to know how I affect different people lifes? Click on the cards to find out!</p>
                     </div>
                 </section>
@@ -63,9 +63,12 @@ export function Impact() {
                         <div className={styles.divPersonagem}>
                             <div className={styles.balaoFalaPersonagem}>
                                 <p>{falasAstro[indiceAstro]}</p>
-                                <button onClick={avancarAstro} className={styles.buttonSkip}>
-                                    Skip
-                                </button>
+                                {indiceAstro < falasAstro.length - 1 && (
+                                    <button onClick={avancarAstro} className={styles.buttonSkip}>
+                                        Skip
+                                    </button>
+                                )}
+
                             </div>
                             <div className={styles.divImgPersonagem}>
                                 <figure>
