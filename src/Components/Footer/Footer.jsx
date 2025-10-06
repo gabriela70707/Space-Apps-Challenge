@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png';
 
 export function Footer() {
 	return (
-		<footer>
+		<footer className={Style.footer}>
 			<section>
 				<img src={logo} alt="Logo" />
 				<nav>
