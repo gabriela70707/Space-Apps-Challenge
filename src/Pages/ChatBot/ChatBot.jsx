@@ -1,5 +1,5 @@
 import styles from './ChatBot.module.css';
-import Coronalda from "../../../public/images/Coronalda.png"
+import Coronalda from "/images/Coronalda.png"
 import { Link } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 
