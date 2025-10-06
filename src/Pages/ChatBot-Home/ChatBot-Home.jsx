@@ -1,7 +1,7 @@
 import styles from './ChatBot-Home.module.css';
 import { Link } from 'react-router-dom';
-import Button from '../../Components_FIX/Button/Button'
-import Earth from '../../Components_FIX/Earth';
+import Button from '../../Components/Button/Button'
+import Earth from '../../Components/Earth';
 
 export function ChatBotHome() {
     return (

@@ -1,8 +1,8 @@
-import { Footer } from "../../Components_FIX/Footer/Footer";
+import { Footer } from "../../Components/Footer/Footer";
 import { useEffect } from "react";
 import styles from "./Third-Page.module.css";
 import question from '../../../public/images/question.png';
-import Button from "../../Components_FIX/Button/Button";
+import Button from "../../Components/Button/Button";
 import { Link } from "react-router-dom";
 
 export function ThirdPage() {
